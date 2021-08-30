@@ -9,64 +9,78 @@
 }
 
 #root {
-  display: flex;
-  flex-direction: column;
-  .size(100vw, 100vh);
-  //.size(100vm)
 
-  header {
+  & > section {
     display: flex;
-    justify-content: space-between;
-    background: rgb(40, 44, 51);
-    padding: 2vmin 2vmin;
-    color: white;
-    text-transform: uppercase;
-    font-weight: 900;
-  
-    ul {
-      list-style: none;
+    flex-direction: column;
+    .size(100vw, 100vh);
+
+    header {
       display: flex;
-  
-      li {
+      justify-content: space-between;
+      background: rgb(40, 44, 51);
+      padding: 2vmin 2vmin;
+      color: white;
+      text-transform: uppercase;
+      font-weight: 900;
+    
+      ul {
+        list-style: none;
         display: flex;
-        align-items: center;
-        padding:  0 1vmin;
-  
-        a {
-          text-decoration: none;
-          color: white;
-      
-          &.active {
-            color: yellow;
+        flex-wrap: wrap;
+    
+        li {
+          display: flex;
+          align-items: center;
+          padding:  0 1vmin;
+    
+          a {
+            text-decoration: none;
+            color: white;
+        
+            &.active {
+              color: yellow;
+            }
           }
         }
       }
     }
-  }
 
-  section {
+    section {
+      display: flex;
+      align-items: center;
+      padding-left: 5vmin;
 
-    &.homepage {
-      flex-grow: 2;
-      //background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center top;
+      &.homepage {
+        flex-grow: 2;
+        background-size: cover;
+        background-position: center top;
+
+        h1 {
+          font-size: 3em;
+          color: rgb(186, 219, 223);
+          text-shadow: 0 0 4px black;
+          max-width: 60%;
+        }
+      }
     }
-
-/*     &.homepage {
-      .size(100vw, 100vh);
-    } */
-  }
-  
-  footer {
-    display: flex;
-    background: rgb(40, 44, 51);
-    padding: 2vmin 2vmin;
-    justify-content: center;
-  
-    a {
-      text-decoration: none;
-      color: white;
+    
+    footer {
+      display: flex;
+      background: rgb(40, 44, 51);
+      padding: 2vmin 2vmin;
+      justify-content: center;
+    
+      a {
+        text-decoration: none;
+        color: white;
+      }
     }
   }
+}
+
+#cart {
+  position: absolute;
+  background: blue;
+  .size(100%, 100%);
 }
