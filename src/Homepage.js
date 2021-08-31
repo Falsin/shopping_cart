@@ -10,7 +10,7 @@ export default function Homepage() {
 
   return (
     <section>
-      <Header cartControl={setIsCartActive} />
+      <Header func={setIsCartActive} switch={isCartActive} />
       <section className='mainContent homepage' 
         style={{backgroundImage: `url(${image})`}}
       >

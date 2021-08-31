@@ -10,7 +10,7 @@ export default function Routers() {
     <HashRouter>
       <Switch>
         <Route exact path='/' component={Homepage} />
-        <Route exact path='/addingPage' component={AddingPage} />
+        <Route exact path='/shop_page' component={AddingPage} />
         <Route exact path='/contact' component={Contact} />
       </Switch>
     </HashRouter>

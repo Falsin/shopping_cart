@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 .size(@width, @height) {
@@ -46,7 +47,7 @@
       }
     }
 
-    section {
+    .mainContent {
       display: flex;
       align-items: center;
       padding-left: 5vmin;
@@ -81,6 +82,73 @@
 
 #cart {
   position: absolute;
-  background: blue;
   .size(100%, 100%);
+  overflow: hidden;
+
+  .background {
+    background: rgba(0, 0, 0, 0.5);
+    .size(100%, 100%);
+    position: absolute;
+    //left: -100%;
+
+    //transition: left 1s linear;
+
+    /* transition-property: left;
+    transition-duration: 1s;
+    transition-timing-function: linear; */
+  }
+
+  .navBar {
+    background: white;
+    .size(40%, 100%);
+    position: absolute;
+    //right: -40%;
+
+    //transition: right 1s linear;
+
+/*     transition-property: right;
+    transition-duration: 1s;
+    transition-timing-function: linear; */
+  }
+
+  &.active {
+
+    .background {
+      animation-name: changeBackgroundPositionForBackground;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+    }
+
+/*     .background {
+      left: 0;
+    }
+
+    .navBar {
+      right: 0;
+    } */
+
+    .navBar {
+      animation-name: changeBackgroundPositionForNavBar;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+@keyframes changeBackgroundPositionForBackground{
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes changeBackgroundPositionForNavBar{
+  from {
+    right: -40%;
+  }
+  to {
+    right: 0;
+  }
 }
