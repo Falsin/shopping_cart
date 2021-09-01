@@ -78,81 +78,92 @@
       }
     }
   }
-}
 
-#cart {
-  position: absolute;
-  .size(100%, 100%);
-  overflow: hidden;
-
-  .background {
-    background: rgba(0, 0, 0, 0.5);
+  #cart {
+    position: absolute;
     .size(100%, 100%);
-    position: absolute;
-
-    animation-name: changePositionForBackgroundAfterActive;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-  }
-
-  .navBar {
-    background: white;
-    .size(40%, 100%);
-    position: absolute;
-
-    animation-name: changePositionForNavBarAfterActive;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-  }
-
-  &.active {
-
+    overflow: hidden;
+  
     .background {
-      animation-name: changePositionForBackground;
+      background: rgba(0, 0, 0, 0.5);
+      .size(100%, 100%);
+      position: absolute;
+  
+      animation-name: changePositionForBackgroundAfterActive;
       animation-duration: 1s;
       animation-fill-mode: forwards;
     }
-
+  
     .navBar {
-      animation-name: changePositionForNavBar;
+      background: white;
+      .size(40%, 100%);
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      animation-name: changePositionForNavBarAfterActive;
       animation-duration: 1s;
       animation-fill-mode: forwards;
+
+      h2 {
+        margin-top: 2vmin;
+      }
+
+      ul {
+        list-style: none;
+      }
     }
-  }
-}
+  
+    &.active {
+  
+      .background {
+        animation-name: changePositionForBackground;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+      }
+  
+      .navBar {
+        animation-name: changePositionForNavBar;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+      }
+    }
 
-@keyframes changePositionForBackground{
-  from {
-    left: -100%;
-  }
-  to {
-    left: 0;
-  }
-}
-
-@keyframes changePositionForNavBar{
-  from {
-    right: -40%;
-  }
-  to {
-    right: 0;
-  }
-}
-
-@keyframes changePositionForBackgroundAfterActive{
-  from {
-    left: 0;
-  }
-  to {
-    left: -100%;
-  }
-}
-
-@keyframes changePositionForNavBarAfterActive{
-  from {
-    right: 0;
-  }
-  to {
-    right: -40%;
+    @keyframes changePositionForBackground{
+      from {
+        left: -100%;
+      }
+      to {
+        left: 0;
+      }
+    }
+    
+    @keyframes changePositionForNavBar{
+      from {
+        right: -40%;
+      }
+      to {
+        right: 0;
+      }
+    }
+    
+    @keyframes changePositionForBackgroundAfterActive{
+      from {
+        left: 0;
+      }
+      to {
+        left: -100%;
+      }
+    }
+    
+    @keyframes changePositionForNavBarAfterActive{
+      from {
+        right: 0;
+      }
+      to {
+        right: -40%;
+      }
+    }
   }
 }

@@ -61,13 +61,13 @@
   text-decoration: none;
   color: white;
 }
-#cart {
+#root #cart {
   position: absolute;
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
-#cart .background {
+#root #cart .background {
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 100%;
@@ -76,21 +76,30 @@
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
-#cart .navBar {
+#root #cart .navBar {
   background: white;
   width: 40%;
   height: 100%;
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   animation-name: changePositionForNavBarAfterActive;
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
-#cart.active .background {
+#root #cart .navBar h2 {
+  margin-top: 2vmin;
+}
+#root #cart .navBar ul {
+  list-style: none;
+}
+#root #cart.active .background {
   animation-name: changePositionForBackground;
   animation-duration: 1s;
   animation-fill-mode: forwards;
 }
-#cart.active .navBar {
+#root #cart.active .navBar {
   animation-name: changePositionForNavBar;
   animation-duration: 1s;
   animation-fill-mode: forwards;
