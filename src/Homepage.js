@@ -1,9 +1,10 @@
 import { useState } from 'react';
 
-import Header from './header/Header';
-import Footer from './footer/Footer';
+import Header from './commonComponents/header/Header';
+import Footer from './commonComponents/footer/Footer';
+import Cart from './commonComponents/cart/Cart';
+
 import image from './images/homepageBackground.jpg';
-import Cart from './Cart';
 
 export default function Homepage() {  
   const [isCartActive, setIsCartActive] = useState(false);

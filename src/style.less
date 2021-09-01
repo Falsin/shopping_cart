@@ -89,53 +89,39 @@
     background: rgba(0, 0, 0, 0.5);
     .size(100%, 100%);
     position: absolute;
-    //left: -100%;
 
-    //transition: left 1s linear;
-
-    /* transition-property: left;
-    transition-duration: 1s;
-    transition-timing-function: linear; */
+    animation-name: changePositionForBackgroundAfterActive;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
   }
 
   .navBar {
     background: white;
     .size(40%, 100%);
     position: absolute;
-    //right: -40%;
 
-    //transition: right 1s linear;
-
-/*     transition-property: right;
-    transition-duration: 1s;
-    transition-timing-function: linear; */
+    animation-name: changePositionForNavBarAfterActive;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
   }
 
   &.active {
 
     .background {
-      animation-name: changeBackgroundPositionForBackground;
+      animation-name: changePositionForBackground;
       animation-duration: 1s;
       animation-fill-mode: forwards;
     }
 
-/*     .background {
-      left: 0;
-    }
-
     .navBar {
-      right: 0;
-    } */
-
-    .navBar {
-      animation-name: changeBackgroundPositionForNavBar;
+      animation-name: changePositionForNavBar;
       animation-duration: 1s;
       animation-fill-mode: forwards;
     }
   }
 }
 
-@keyframes changeBackgroundPositionForBackground{
+@keyframes changePositionForBackground{
   from {
     left: -100%;
   }
@@ -144,11 +130,29 @@
   }
 }
 
-@keyframes changeBackgroundPositionForNavBar{
+@keyframes changePositionForNavBar{
   from {
     right: -40%;
   }
   to {
     right: 0;
+  }
+}
+
+@keyframes changePositionForBackgroundAfterActive{
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+@keyframes changePositionForNavBarAfterActive{
+  from {
+    right: 0;
+  }
+  to {
+    right: -40%;
   }
 }
