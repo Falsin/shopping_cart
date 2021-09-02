@@ -1,4 +1,8 @@
-export default function NavBar(params) {
+import useAddClickHandler from "../../../myOwnHooks/useAddClickHandler"
+
+export default function NavBar(props) {
+  useAddClickHandler(props.props, 'closeBtn')
+
   return (
     <div className='navBar'>
       <h2>Your shopping cart</h2>
@@ -9,7 +13,7 @@ export default function NavBar(params) {
 
       <div id='total'>Total: $<span>sum</span></div>
       <button>Checkout</button>
-      <button>Close</button>
+      <button id='closeBtn'>Close</button>
     </div>
   )
 }

@@ -39,6 +39,7 @@
   display: flex;
   align-items: center;
   padding-left: 5vmin;
+  flex-wrap: wrap;
 }
 #root > section .mainContent.homepage {
   flex-grow: 2;
@@ -50,6 +51,32 @@
   color: #badbdf;
   text-shadow: 0 0 4px black;
   max-width: 60%;
+}
+#root > section .mainContent.shopPage {
+  align-items: stretch;
+}
+#root > section .mainContent.shopPage > div {
+  width: 30vmin;
+  border: solid red 1px;
+  display: flex;
+  flex-direction: column;
+}
+#root > section .mainContent.shopPage > div .image {
+  width: 100%;
+  background-position: center center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+#root > section .mainContent.shopPage > div .image::after {
+  content: '';
+  padding-top: 100%;
+  display: block;
+}
+#root > section .mainContent.shopPage > div .info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: flex-end;
 }
 #root > section footer {
   display: flex;
@@ -67,7 +94,7 @@
   height: 100%;
   overflow: hidden;
 }
-#root #cart .background {
+#root #cart #background {
   background: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 100%;
@@ -94,7 +121,7 @@
 #root #cart .navBar ul {
   list-style: none;
 }
-#root #cart.active .background {
+#root #cart.active #background {
   animation-name: changePositionForBackground;
   animation-duration: 1s;
   animation-fill-mode: forwards;

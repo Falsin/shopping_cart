@@ -1,13 +1,15 @@
 import { useEffect } from "react";
 
-export default function useAddClickHandler(props) {
+export default function useAddClickHandler(props, elemId) {
   useEffect(() => {
     let elem = document.getElementById('cart');
 
     if (elem) {
       resolvePromiseArray(elem)
       .then(() => {
-        elem.children[0].addEventListener('mousedown', () => {
+        let childElem = document.getElementById(elemId);
+
+        childElem.addEventListener('mousedown', () => {
           elem.classList.remove('active');
           resolvePromiseArray(elem)
           .then(() => props.func(!props.status))

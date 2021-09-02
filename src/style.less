@@ -51,6 +51,7 @@
       display: flex;
       align-items: center;
       padding-left: 5vmin;
+      flex-wrap: wrap;
 
       &.homepage {
         flex-grow: 2;
@@ -62,6 +63,38 @@
           color: rgb(186, 219, 223);
           text-shadow: 0 0 4px black;
           max-width: 60%;
+        }
+      }
+
+      &.shopPage {
+        align-items: stretch;
+
+        & > div {
+          //.size(30vmin, 50vmin);
+          width: 30vmin;
+          border: solid red 1px;
+          display: flex;
+          flex-direction: column;
+
+          .image {
+            width: 100%;
+            background-position: center center;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+
+            &::after {
+              content: '';
+              padding-top: 100%;
+              display: block;
+            }
+          }
+
+          .info {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: flex-end;
+          }
         }
       }
     }
@@ -84,7 +117,7 @@
     .size(100%, 100%);
     overflow: hidden;
   
-    .background {
+    #background {
       background: rgba(0, 0, 0, 0.5);
       .size(100%, 100%);
       position: absolute;
@@ -117,7 +150,7 @@
   
     &.active {
   
-      .background {
+      #background {
         animation-name: changePositionForBackground;
         animation-duration: 1s;
         animation-fill-mode: forwards;
