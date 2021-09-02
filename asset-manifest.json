@@ -1,21 +1,31 @@
 {
   "files": {
-    "main.css": "./static/css/main.2a2fa0e2.chunk.css",
-    "main.js": "./static/js/main.8ed559c0.chunk.js",
-    "main.js.map": "./static/js/main.8ed559c0.chunk.js.map",
+    "main.css": "./static/css/main.2a738b85.chunk.css",
+    "main.js": "./static/js/main.bd29fd00.chunk.js",
+    "main.js.map": "./static/js/main.bd29fd00.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.b7198cbd.js",
     "runtime-main.js.map": "./static/js/runtime-main.b7198cbd.js.map",
-    "static/js/2.034de746.chunk.js": "./static/js/2.034de746.chunk.js",
-    "static/js/2.034de746.chunk.js.map": "./static/js/2.034de746.chunk.js.map",
+    "static/js/2.d7954485.chunk.js": "./static/js/2.d7954485.chunk.js",
+    "static/js/2.d7954485.chunk.js.map": "./static/js/2.d7954485.chunk.js.map",
     "index.html": "./index.html",
-    "static/css/main.2a2fa0e2.chunk.css.map": "./static/css/main.2a2fa0e2.chunk.css.map",
-    "static/js/2.034de746.chunk.js.LICENSE.txt": "./static/js/2.034de746.chunk.js.LICENSE.txt",
-    "static/media/homepageBackground.b231f005.jpg": "./static/media/homepageBackground.b231f005.jpg"
+    "static/css/main.2a738b85.chunk.css.map": "./static/css/main.2a738b85.chunk.css.map",
+    "static/js/2.d7954485.chunk.js.LICENSE.txt": "./static/js/2.d7954485.chunk.js.LICENSE.txt",
+    "static/media/black_T-shirt.jpg": "./static/media/black_T-shirt.39cc51dd.jpg",
+    "static/media/blue_jeans.jpg": "./static/media/blue_jeans.3c1c0085.jpg",
+    "static/media/brawn_bag.jpg": "./static/media/brawn_bag.c083f482.jpg",
+    "static/media/darkblue_jeans.jpg": "./static/media/darkblue_jeans.bb55c432.jpg",
+    "static/media/gray_and_black_Gap.jpg": "./static/media/gray_and_black_Gap.b222b648.jpg",
+    "static/media/gray_bag.jpg": "./static/media/gray_bag.5d8635c6.jpg",
+    "static/media/homepageBackground.b231f005.jpg": "./static/media/homepageBackground.b231f005.jpg",
+    "static/media/nike_air_250.jpg": "./static/media/nike_air_250.d26879cf.jpg",
+    "static/media/nike_air_300.jpg": "./static/media/nike_air_300.94e0f1d4.jpg",
+    "static/media/red_gap.jpg": "./static/media/red_gap.ff2f8fec.jpg",
+    "static/media/white_T-shirt.jpg": "./static/media/white_T-shirt.672032b6.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.b7198cbd.js",
-    "static/js/2.034de746.chunk.js",
-    "static/css/main.2a2fa0e2.chunk.css",
-    "static/js/main.8ed559c0.chunk.js"
+    "static/js/2.d7954485.chunk.js",
+    "static/css/main.2a738b85.chunk.css",
+    "static/js/main.bd29fd00.chunk.js"
   ]
 }
