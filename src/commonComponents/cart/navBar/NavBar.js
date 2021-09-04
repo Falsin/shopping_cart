@@ -6,6 +6,12 @@ export default function NavBar(props) {
   const [elementsArray, setElementsArray] = useState([]);
 
   useEffect(() => {
+    setElementsArray(props.props.elements)
+  }, [elementsArray])
+  //console.log(elementsArray)
+  console.log(props.props)
+
+ /*  useEffect(() => {
     //console.log(props.props.elem)
     if (props.props.elem !== null && props.props.elem !== undefined) {
       if (elementsArray.length === 0) {
@@ -16,7 +22,7 @@ export default function NavBar(props) {
     }
     //console.log(elementsArray)
   })
-  console.log(elementsArray)
+  console.log(elementsArray) */
 
   return (
     <div className='navBar'>
@@ -24,7 +30,7 @@ export default function NavBar(props) {
 
       <ul id='listOfItems'>
         {/* <li>Test li</li> */}
-        {elementsArray.length === 0 ? null : elementsArray.map((elem, id) => {
+        {!elementsArray.length ? null : elementsArray.map((elem, id) => {
           console.log()
           return <li key={id}>{elem.productName}</li>
         })}

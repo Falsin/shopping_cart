@@ -10,7 +10,7 @@ import * as collection from './images/productCollection/collection';
 export default function ShopPage() {
   const [isCartActive, setIsCartActive] = useState(false);
   const [elementsArray, setElementsArray] = useState([]);
-  const [currentElement, setCurrentElement] = useState(null);
+  const [selectedItems, setSelectedItems] = useState([]);
 
   useEffect(() => {
     let check = Object.entries(collection).map(elem => {
@@ -18,6 +18,7 @@ export default function ShopPage() {
         productName: elem[0],
         url: elem[1].default,
         id: uniqid(),
+        count: 0,
       }
     })
 
@@ -35,7 +36,41 @@ export default function ShopPage() {
               <h3>{elem.productName}</h3>
               <div className='info'>
                 <p>$ {(id + 1) * 100}</p>
-                <button onClick={() => setCurrentElement(elem)}>Add to cart</button>
+                <button onClick={() => {
+
+                  let findIndex = selectedItems.findIndex(item => item.id === elem.id);
+
+                  if (findIndex === -1) {
+                    elem.count++;
+                    setSelectedItems(selectedItems.concat(elem));
+                    console.log('green')
+                  } else {
+                    console.log('find')
+                    setSelectedItems(selectedItems[findIndex].count = 2)
+                    console.log(selectedItems)
+                  }
+
+                  /* let findElem = selectedItems.find(item => item.id === elem.id);
+
+                  if (findElem === undefined) {
+                    elem.count++;
+                    setSelectedItems(selectedItems.concat(elem));
+                  } else {
+
+                  } */
+
+                  /* if (selectedItems.every((item) => item.id !== elem.id)) {
+                    elem.count++;
+                    setSelectedItems(selectedItems.concat(elem));
+                  } else {
+
+                  } */
+                  /* if (selectedItems.find((elem) => elem.id ==)) {
+                    
+                  } */
+
+                  //setSelectedItems(selectedItems.concat(elem));
+                }}>Add to cart</button>
               </div>
             </div>
           )
@@ -44,7 +79,7 @@ export default function ShopPage() {
 
       <Footer />
 
-      <Cart status={isCartActive} func={setIsCartActive} elem={currentElement} />
+      <Cart status={isCartActive} func={setIsCartActive} elements={selectedItems} />
     </section>
   )
 }
