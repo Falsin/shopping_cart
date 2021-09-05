@@ -10,7 +10,9 @@ import * as collection from './images/productCollection/collection';
 export default function ShopPage() {
   const [isCartActive, setIsCartActive] = useState(false);
   const [elementsArray, setElementsArray] = useState([]);
-  const [selectedItems, setSelectedItems] = useState([]);
+  //const [selectedItems, setSelectedItems] = useState([]);
+  const [selectedItem, setSelectedItem] = useState(null);
+
 
   useEffect(() => {
     let check = Object.entries(collection).map(elem => {
@@ -25,9 +27,25 @@ export default function ShopPage() {
     setElementsArray(check)
   }, [])
 
+  //console.log(selectedItem)
+
+  /* function changeSelectedItems(elem) {
+    let findIndex = selectedItems.findIndex(item => item.id === elem.id);
+                  
+    if (findIndex === -1) {
+      elem.count++;
+      setSelectedItems(selectedItems.concat(elem));
+
+    } else {
+      let cloneArr = selectedItems.map(elem => Object.assign({}, elem))
+      cloneArr[findIndex].count = ++cloneArr[findIndex].count;
+      setSelectedItems(cloneArr);
+    }
+  } */
+
   return (
     <section>
-      <Header func={setIsCartActive} switch={isCartActive} />
+      <Header func={setIsCartActive} switch={isCartActive} /* selectedItems={selectedItems} *//>
       <section className='mainContent shopPage'>
         {elementsArray.map((elem, id) => {
           return (
@@ -37,39 +55,9 @@ export default function ShopPage() {
               <div className='info'>
                 <p>$ {(id + 1) * 100}</p>
                 <button onClick={() => {
-
-                  let findIndex = selectedItems.findIndex(item => item.id === elem.id);
-
-                  if (findIndex === -1) {
-                    elem.count++;
-                    setSelectedItems(selectedItems.concat(elem));
-                    console.log('green')
-                  } else {
-                    console.log('find')
-                    setSelectedItems(selectedItems[findIndex].count = 2)
-                    console.log(selectedItems)
-                  }
-
-                  /* let findElem = selectedItems.find(item => item.id === elem.id);
-
-                  if (findElem === undefined) {
-                    elem.count++;
-                    setSelectedItems(selectedItems.concat(elem));
-                  } else {
-
-                  } */
-
-                  /* if (selectedItems.every((item) => item.id !== elem.id)) {
-                    elem.count++;
-                    setSelectedItems(selectedItems.concat(elem));
-                  } else {
-
-                  } */
-                  /* if (selectedItems.find((elem) => elem.id ==)) {
-                    
-                  } */
-
-                  //setSelectedItems(selectedItems.concat(elem));
+                  //console.log('click')
+                  setSelectedItem(elem);
+                  //changeSelectedItems(elem)
                 }}>Add to cart</button>
               </div>
             </div>
@@ -79,7 +67,7 @@ export default function ShopPage() {
 
       <Footer />
 
-      <Cart status={isCartActive} func={setIsCartActive} elements={selectedItems} />
+      <Cart status={isCartActive} func={setIsCartActive} element={selectedItem} setSelectedItem={setSelectedItem} />
     </section>
   )
 }

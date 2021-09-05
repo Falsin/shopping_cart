@@ -2,39 +2,28 @@ import useAddClickHandler from "../../../myOwnHooks/useAddClickHandler";
 import { useState, useEffect } from "react";
 
 export default function NavBar(props) {
-  useAddClickHandler(props.props, 'closeBtn');
-  const [elementsArray, setElementsArray] = useState([]);
+  useAddClickHandler(props.properties, 'closeBtn');
+/*   const [elementsArray, setElementsArray] = useState([]);
 
   useEffect(() => {
-    setElementsArray(props.props.elements)
+    setElementsArray(props.properties.elements)
   }, [elementsArray])
-  //console.log(elementsArray)
-  console.log(props.props)
-
- /*  useEffect(() => {
-    //console.log(props.props.elem)
-    if (props.props.elem !== null && props.props.elem !== undefined) {
-      if (elementsArray.length === 0) {
-        setElementsArray(elementsArray.concat(props.props.elem))
-      } else if (elementsArray.length !== 0 && elementsArray[elementsArray.length-1].id !== props.props.elem.id) {
-        setElementsArray(elementsArray.concat(props.props.elem))
-      }
-    }
-    //console.log(elementsArray)
-  })
-  console.log(elementsArray) */
-
+ */
   return (
     <div className='navBar'>
       <h2>Your shopping cart</h2>
 
       <ul id='listOfItems'>
-        {/* <li>Test li</li> */}
-        {!elementsArray.length ? null : elementsArray.map((elem, id) => {
-          console.log()
-          return <li key={id}>{elem.productName}</li>
+        {!props.test.length ? null : props.test.map((elem, id) => {
+          return <li key={id}>{elem.productName}: <span>{elem.count}</span></li>
         })}
       </ul>
+
+      {/* <ul id='listOfItems'>
+        {!elementsArray.length ? null : elementsArray.map((elem, id) => {
+          return <li key={id}>{elem.productName}: <span>{elem.count}</span></li>
+        })}
+      </ul> */}
 
       <div id='total'>Total: $<span>sum</span></div>
       <button>Checkout</button>
