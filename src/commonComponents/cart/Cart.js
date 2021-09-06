@@ -86,7 +86,7 @@ export default function Cart(props) {
     (!props.status) ? null :
     <section id='cart' className='active'>
       <div id='background'></div>
-      <NavBar properties={props} test={elementsCollection} />
+      <NavBar properties={props} test={elementsCollection} setElementsCollection={setElementsCollection} />
     </section>
   )
 }

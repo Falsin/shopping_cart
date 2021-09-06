@@ -120,6 +120,34 @@
 }
 #root #cart .navBar ul {
   list-style: none;
+  width: 100%;
+}
+#root #cart .navBar ul .product {
+  display: flex;
+  width: 100%;
+}
+#root #cart .navBar ul .product .image {
+  width: 20%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#root #cart .navBar ul .product .image::after {
+  content: '';
+  padding-top: 100%;
+  display: block;
+}
+#root #cart .navBar ul .product .detailInfo {
+  width: 30%;
+  word-wrap: break-word;
+}
+#root #cart .navBar ul .product .detailInfo h3,
+#root #cart .navBar ul .product .detailInfo p {
+  text-align: center !important;
+}
+#root #cart .navBar ul .product .detailInfo div {
+  display: flex;
+  justify-content: center;
 }
 #root #cart.active #background {
   animation-name: changePositionForBackground;
@@ -161,5 +189,10 @@
   }
   to {
     right: -40%;
+  }
+}
+@media screen and (max-width: 700px) {
+  #root #cart .navBar ul .product .detailInfo {
+    width: 50%;
   }
 }

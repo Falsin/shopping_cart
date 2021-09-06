@@ -15,12 +15,13 @@ export default function ShopPage() {
 
 
   useEffect(() => {
-    let check = Object.entries(collection).map(elem => {
+    let check = Object.entries(collection).map((elem, id) => {
       return {
         productName: elem[0],
         url: elem[1].default,
         id: uniqid(),
         count: 0,
+        price: `$ ${(id + 1) * 100}`,
       }
     })
 
@@ -53,11 +54,10 @@ export default function ShopPage() {
               <div className='image' style={{backgroundImage: `url(${elem.url})`}} />
               <h3>{elem.productName}</h3>
               <div className='info'>
-                <p>$ {(id + 1) * 100}</p>
+                {/* <p>$ {(id + 1) * 100}</p> */}
+                <p>{elem.price}</p>
                 <button onClick={() => {
-                  //console.log('click')
                   setSelectedItem(elem);
-                  //changeSelectedItems(elem)
                 }}>Add to cart</button>
               </div>
             </div>
