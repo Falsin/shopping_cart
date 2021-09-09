@@ -8,7 +8,6 @@ export default function useAddClickHandler(props, elemId) {
       resolvePromiseArray(elem)
       .then(() => {
         let childElem = document.getElementById(elemId);
-        //console.log(childElem)
 
         childElem.addEventListener('mousedown', () => {
           elem.classList.remove('active');

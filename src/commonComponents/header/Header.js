@@ -1,29 +1,21 @@
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+import cart from '../../images/cart.svg';
 
 let selectedItemsArr = [];
 
-//console.log(selectedItemsArr)
-
 export default function Header(props) {
-  //console.log(props.selectedItems)
 
-/*   if (props.selectedItems && props.selectedItems.length && selectedItemsArr.length) {
-    selectedItemsArr.find(() => {
-      return 
-    })
-  } */
+  //console.log(cart)
 
-  /* if (props.selectedItems && props.selectedItems.length) {
-    if (selectedItemsArr.length) {
+  const [countSelectedElements, setCountSelectedElements] = useState(selectedItemsArr);
+
+  useEffect(() => {
+    if (props.selectedItems) {
       selectedItemsArr = props.selectedItems;
-    } else {
-
+      setCountSelectedElements(props.selectedItems);
     }
-    //console.log(props.selectedItems)
-    selectedItemsArr = selectedItemsArr.concat(props.selectedItems)
-  } */
-
-  //console.log(selectedItemsArr)
+  })
 
   return (
     <header>
@@ -32,7 +24,16 @@ export default function Header(props) {
         <li><NavLink exact to='/' activeClassName='active'>homepage</NavLink></li>
         <li><NavLink exact to='/shop_page' activeClassName='active'>shop page</NavLink></li>
         <li><NavLink exact to='/contact' activeClassName='active'>contact</NavLink></li>
-        <li onClick={() => props.func(!props.switch)}>Cart</li>
+        <li onClick={() => props.func(!props.switch)} /* style={{backgroundImage: `url(../images/cart.svg)`}} */>
+          <img src={cart}/>
+          {!countSelectedElements.length ? null : 
+           <div className='countSelectedProducts'>
+             {countSelectedElements.reduce((prevVal, currentVal) => {
+               return prevVal + currentVal.count;
+             }, 0)}
+             </div>
+          }
+        </li>
       </ul>
     </header>
   )
