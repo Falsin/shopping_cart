@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react/cjs/react.development";
 
 let elementsArray = [];
 
-const Cart = React.memo((props) => {
+const Cart = (props) => {
   useAddClickHandler(props, 'background');
 
   const [objectWithCollection, setObjectWithCollection] = useState({
@@ -18,6 +18,8 @@ const Cart = React.memo((props) => {
       objClone.array = props.selectedItems;
 
       setObjectWithCollection(objClone);
+    } else {
+      props.setSelectedItems(objectWithCollection.array);
     }
   }, [props.selectedItems])
 
@@ -28,10 +30,13 @@ const Cart = React.memo((props) => {
 
     } else {
       new Promise(res => {
-        objClone.isElementsCollectionChangeFromChildComp = !objClone.isElementsCollectionChangeFromChildComp;
-        elementsArray = objectWithCollection.array;
-        props.setSelectedItems(objectWithCollection.array);
-        res(null)
+        try {
+          objClone.isElementsCollectionChangeFromChildComp = !objClone.isElementsCollectionChangeFromChildComp;
+          elementsArray = objectWithCollection.array;
+          props.setSelectedItems(objectWithCollection.array);
+        } finally {
+          res(null)
+        }
       })
       .then(() => setObjectWithCollection(objClone));
     }
@@ -46,6 +51,6 @@ const Cart = React.memo((props) => {
       <NavBar properties={props} objectWithCollection={objectWithCollection} setObjectWithCollection={setObjectWithCollection} />  
     </section>
   )
-})
+}
 
 export default Cart;

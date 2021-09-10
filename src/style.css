@@ -3,9 +3,14 @@
   margin: 0;
   box-sizing: border-box;
 }
+body {
+  overflow-x: hidden;
+}
 #root > section {
   display: flex;
   flex-direction: column;
+}
+#root > section.homepage {
   width: 100vw;
   height: 100vh;
 }
@@ -17,6 +22,10 @@
   color: white;
   text-transform: uppercase;
   font-weight: 900;
+}
+#root > section header h2 {
+  display: flex;
+  align-items: center;
 }
 #root > section header ul {
   list-style: none;
@@ -36,8 +45,8 @@
 }
 #root > section header ul li .countSelectedProducts {
   position: absolute;
-  right: -5px;
-  top: -5px;
+  right: 0;
+  top: 0;
   color: yellow;
 }
 #root > section header ul li a {
@@ -50,7 +59,7 @@
 #root > section .mainContent {
   display: flex;
   align-items: center;
-  padding-left: 5vmin;
+  padding: 0 5vmin;
   flex-wrap: wrap;
 }
 #root > section .mainContent.homepage {
@@ -66,12 +75,15 @@
 }
 #root > section .mainContent.shopPage {
   align-items: stretch;
+  justify-content: space-between;
 }
 #root > section .mainContent.shopPage > div {
   width: 30vmin;
-  border: solid red 1px;
   display: flex;
   flex-direction: column;
+}
+#root > section .mainContent.shopPage > div.visible {
+  margin-top: 4vmin;
 }
 #root > section .mainContent.shopPage > div .image {
   width: 100%;
@@ -89,6 +101,9 @@
   flex-direction: column;
   flex-grow: 1;
   justify-content: flex-end;
+}
+#root > section.shopPage footer {
+  margin-top: 4vmin;
 }
 #root > section footer {
   display: flex;

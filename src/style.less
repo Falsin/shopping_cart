@@ -10,12 +10,20 @@
   height: @height;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 #root {
 
   & > section {
+
+    &.homepage {
+      .size(100vw, 100vh);
+    }
     display: flex;
     flex-direction: column;
-    .size(100vw, 100vh);
+    //.size(100vw, 100vh);
 
     header {
       display: flex;
@@ -25,6 +33,11 @@
       color: white;
       text-transform: uppercase;
       font-weight: 900;
+
+      h2 {
+        display: flex;
+        align-items: center;
+      }
     
       ul {
         list-style: none;
@@ -45,8 +58,8 @@
 
           .countSelectedProducts {
             position: absolute;
-            right: -5px;
-            top: -5px;
+            right: 0;
+            top: 0;
             color: yellow;
           }
     
@@ -65,7 +78,7 @@
     .mainContent {
       display: flex;
       align-items: center;
-      padding-left: 5vmin;
+      padding: 0 5vmin;
       flex-wrap: wrap;
 
       &.homepage {
@@ -83,11 +96,16 @@
 
       &.shopPage {
         align-items: stretch;
+        justify-content: space-between;
 
         & > div {
+
+          &.visible {
+            margin-top: 4vmin;
+          }
           //.size(30vmin, 50vmin);
           width: 30vmin;
-          border: solid red 1px;
+          //border: solid red 0.1px;
           display: flex;
           flex-direction: column;
 
@@ -111,6 +129,12 @@
             justify-content: flex-end;
           }
         }
+      }
+    }
+
+    &.shopPage {
+      footer {
+        margin-top: 4vmin;
       }
     }
     

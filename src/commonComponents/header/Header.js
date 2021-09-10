@@ -5,9 +5,6 @@ import cart from '../../images/cart.svg';
 let selectedItemsArr = [];
 
 export default function Header(props) {
-
-  //console.log(cart)
-
   const [countSelectedElements, setCountSelectedElements] = useState(selectedItemsArr);
 
   useEffect(() => {
@@ -15,7 +12,7 @@ export default function Header(props) {
       selectedItemsArr = props.selectedItems;
       setCountSelectedElements(props.selectedItems);
     }
-  })
+  }, [props.selectedItems])
 
   return (
     <header>
