@@ -3,23 +3,23 @@ import useAddClickHandler from "../../../myOwnHooks/useAddClickHandler";
 export default function NavBar(props) {
   useAddClickHandler(props.properties, 'closeBtn');
 
-  function decrement(id) {
-    let newArray = props.objectWithCollection.array.map(elem => Object.assign({}, elem));//
-    newArray[id].count = --newArray[id].count;
+  function changeState(id, operation) {
+    let objOfFuncs = {
+      decrement() {
+        newArray[id].count = --newArray[id].count;
+    
+        if (newArray[id].count === 0) {
+          newArray.splice(id, 1)
+        }
+      },
 
-    if (newArray[id].count === 0) {
-      newArray.splice(id, 1)
+      increment() {
+        newArray[id].count = ++newArray[id].count;
+      }
     }
 
-    props.setObjectWithCollection({
-      array: newArray,
-      isElementsCollectionChangeFromChildComp: !props.objectWithCollection.isElementsCollectionChangeFromChildComp,
-    })
-  }
-
-  function increment(id) {
-    let newArray = props.objectWithCollection.array.map(elem => Object.assign({}, elem));//
-    newArray[id].count = ++newArray[id].count;
+    let newArray = props.objectWithCollection.array.map(elem => Object.assign({}, elem));
+    objOfFuncs[operation]();
 
     props.setObjectWithCollection({
       array: newArray,
@@ -40,9 +40,9 @@ export default function NavBar(props) {
                 <h3>{elem.productName}</h3>
                 <p>{elem.price}</p>
                 <div>
-                  <button className='decrement' onClick={() => decrement(id)}>minus</button>
+                  <button className='decrement' onClick={() => changeState(id, 'decrement')}></button>
                   <span>{elem.count}</span>
-                  <button className='increment' onClick={() => increment(id)}>plus</button>
+                  <button className='increment' onClick={() => changeState(id, 'increment')}></button>
                 </div>
               </div>
             </div>

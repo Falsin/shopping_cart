@@ -2,7 +2,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  //border: solid red 1px;
 }
 
 .size(@width, @height) {
@@ -17,13 +16,68 @@ body {
 #root {
 
   & > section {
+    position: relative;
 
     &.homepage {
       .size(100vw, 100vh);
+      display: flex;
+      flex-direction: column;
+
+      .mainContent {
+        flex-grow: 2;
+        background-size: cover;
+        background-position: center top;
+
+        h1 {
+          font-size: 3em;
+          color: rgb(186, 219, 223);
+          text-shadow: 0 0 4px black;
+          max-width: 60%;
+        }
+      }
     }
-    display: flex;
-    flex-direction: column;
-    //.size(100vw, 100vh);
+
+    &.shopPage {
+
+      .mainContent {
+        align-items: stretch;
+        justify-content: space-between;
+
+        & > div {
+
+          &.visible {
+            margin-top: 4vmin;
+          }
+          width: 30vmin;
+          display: flex;
+          flex-direction: column;
+
+          .image {
+            width: 100%;
+            background-position: center center;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+
+            &::after {
+              content: '';
+              padding-top: 100%;
+              display: block;
+            }
+          }
+
+          .info {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: flex-end;
+          }
+        }
+      }
+
+      footer {
+        margin-top: 4vmin;
+      }
+    }
 
     header {
       display: flex;
@@ -80,62 +134,6 @@ body {
       align-items: center;
       padding: 0 5vmin;
       flex-wrap: wrap;
-
-      &.homepage {
-        flex-grow: 2;
-        background-size: cover;
-        background-position: center top;
-
-        h1 {
-          font-size: 3em;
-          color: rgb(186, 219, 223);
-          text-shadow: 0 0 4px black;
-          max-width: 60%;
-        }
-      }
-
-      &.shopPage {
-        align-items: stretch;
-        justify-content: space-between;
-
-        & > div {
-
-          &.visible {
-            margin-top: 4vmin;
-          }
-          //.size(30vmin, 50vmin);
-          width: 30vmin;
-          //border: solid red 0.1px;
-          display: flex;
-          flex-direction: column;
-
-          .image {
-            width: 100%;
-            background-position: center center;
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-
-            &::after {
-              content: '';
-              padding-top: 100%;
-              display: block;
-            }
-          }
-
-          .info {
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            justify-content: flex-end;
-          }
-        }
-      }
-    }
-
-    &.shopPage {
-      footer {
-        margin-top: 4vmin;
-      }
     }
     
     footer {
@@ -153,6 +151,7 @@ body {
 
   #cart {
     position: absolute;
+    top: 0;
     .size(100%, 100%);
     overflow: hidden;
   
@@ -215,6 +214,34 @@ body {
             div {
               display: flex;
               justify-content: center;
+
+              button {
+                padding: 1.5vmin;
+                position: relative;
+                border: 0;
+                background: rgb(177, 177, 177);
+
+                &::after {
+                  .size(100%, 100%);
+                  top: 0;
+                  left: 0;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  position: absolute;
+                  font-size: 16px;
+                  vertical-align: middle;
+                  font-weight: 900;
+                }
+
+                &.decrement::after {
+                  content: '−';
+                }
+  
+                &.increment::after {
+                  content: '+';
+                }
+              }
             }
           }
         }

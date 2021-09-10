@@ -21,7 +21,7 @@ export default function Header(props) {
         <li><NavLink exact to='/' activeClassName='active'>homepage</NavLink></li>
         <li><NavLink exact to='/shop_page' activeClassName='active'>shop page</NavLink></li>
         <li><NavLink exact to='/contact' activeClassName='active'>contact</NavLink></li>
-        <li onClick={() => props.func(!props.switch)} /* style={{backgroundImage: `url(../images/cart.svg)`}} */>
+        <li onClick={() => props.func(!props.switch)}>
           <img src={cart}/>
           {!countSelectedElements.length ? null : 
            <div className='countSelectedProducts'>

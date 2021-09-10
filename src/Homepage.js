@@ -13,7 +13,7 @@ export default function Homepage() {
   return (
     <section className='homepage'>
       <Header func={setIsCartActive} switch={isCartActive} selectedItems={selectedItems} />
-      <section className='mainContent homepage' 
+      <section className='mainContent' 
         style={{backgroundImage: `url(${image})`}}
       >
         <h1>We don't do fashion, we are fashion</h1>

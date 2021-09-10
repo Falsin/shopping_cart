@@ -7,12 +7,56 @@ body {
   overflow-x: hidden;
 }
 #root > section {
-  display: flex;
-  flex-direction: column;
+  position: relative;
 }
 #root > section.homepage {
   width: 100vw;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+#root > section.homepage .mainContent {
+  flex-grow: 2;
+  background-size: cover;
+  background-position: center top;
+}
+#root > section.homepage .mainContent h1 {
+  font-size: 3em;
+  color: #badbdf;
+  text-shadow: 0 0 4px black;
+  max-width: 60%;
+}
+#root > section.shopPage .mainContent {
+  align-items: stretch;
+  justify-content: space-between;
+}
+#root > section.shopPage .mainContent > div {
+  width: 30vmin;
+  display: flex;
+  flex-direction: column;
+}
+#root > section.shopPage .mainContent > div.visible {
+  margin-top: 4vmin;
+}
+#root > section.shopPage .mainContent > div .image {
+  width: 100%;
+  background-position: center center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+#root > section.shopPage .mainContent > div .image::after {
+  content: '';
+  padding-top: 100%;
+  display: block;
+}
+#root > section.shopPage .mainContent > div .info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+#root > section.shopPage footer {
+  margin-top: 4vmin;
 }
 #root > section header {
   display: flex;
@@ -62,49 +106,6 @@ body {
   padding: 0 5vmin;
   flex-wrap: wrap;
 }
-#root > section .mainContent.homepage {
-  flex-grow: 2;
-  background-size: cover;
-  background-position: center top;
-}
-#root > section .mainContent.homepage h1 {
-  font-size: 3em;
-  color: #badbdf;
-  text-shadow: 0 0 4px black;
-  max-width: 60%;
-}
-#root > section .mainContent.shopPage {
-  align-items: stretch;
-  justify-content: space-between;
-}
-#root > section .mainContent.shopPage > div {
-  width: 30vmin;
-  display: flex;
-  flex-direction: column;
-}
-#root > section .mainContent.shopPage > div.visible {
-  margin-top: 4vmin;
-}
-#root > section .mainContent.shopPage > div .image {
-  width: 100%;
-  background-position: center center;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-}
-#root > section .mainContent.shopPage > div .image::after {
-  content: '';
-  padding-top: 100%;
-  display: block;
-}
-#root > section .mainContent.shopPage > div .info {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  justify-content: flex-end;
-}
-#root > section.shopPage footer {
-  margin-top: 4vmin;
-}
 #root > section footer {
   display: flex;
   background: #282c33;
@@ -117,6 +118,7 @@ body {
 }
 #root #cart {
   position: absolute;
+  top: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -175,6 +177,31 @@ body {
 #root #cart .navBar ul .product .detailInfo div {
   display: flex;
   justify-content: center;
+}
+#root #cart .navBar ul .product .detailInfo div button {
+  padding: 1.5vmin;
+  position: relative;
+  border: 0;
+  background: #b1b1b1;
+}
+#root #cart .navBar ul .product .detailInfo div button::after {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  font-size: 16px;
+  vertical-align: middle;
+  font-weight: 900;
+}
+#root #cart .navBar ul .product .detailInfo div button.decrement::after {
+  content: '−';
+}
+#root #cart .navBar ul .product .detailInfo div button.increment::after {
+  content: '+';
 }
 #root #cart.active #background {
   animation-name: changePositionForBackground;

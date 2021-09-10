@@ -52,7 +52,7 @@ export default function ShopPage() {
   return (
     <section className='shopPage'>
       <Header func={setIsCartActive} switch={isCartActive} selectedItems={selectedItems} />
-      <section className='mainContent shopPage'>
+      <section className='mainContent'>
         {elementsArray.map((elem, id) => {
           return (
             <div key={elem.id} className='visible'>
