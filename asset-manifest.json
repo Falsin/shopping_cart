@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "./static/css/main.1bd4268e.chunk.css",
-    "main.js": "./static/js/main.c3b4707c.chunk.js",
-    "main.js.map": "./static/js/main.c3b4707c.chunk.js.map",
+    "main.css": "./static/css/main.1d112312.chunk.css",
+    "main.js": "./static/js/main.e5164169.chunk.js",
+    "main.js.map": "./static/js/main.e5164169.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.b7198cbd.js",
     "runtime-main.js.map": "./static/js/runtime-main.b7198cbd.js.map",
     "static/js/2.bbdc6a32.chunk.js": "./static/js/2.bbdc6a32.chunk.js",
     "static/js/2.bbdc6a32.chunk.js.map": "./static/js/2.bbdc6a32.chunk.js.map",
     "index.html": "./index.html",
-    "static/css/main.1bd4268e.chunk.css.map": "./static/css/main.1bd4268e.chunk.css.map",
+    "static/css/main.1d112312.chunk.css.map": "./static/css/main.1d112312.chunk.css.map",
     "static/js/2.bbdc6a32.chunk.js.LICENSE.txt": "./static/js/2.bbdc6a32.chunk.js.LICENSE.txt",
     "static/media/black_T-shirt.jpg": "./static/media/black_T-shirt.39cc51dd.jpg",
     "static/media/blue_jeans.jpg": "./static/media/blue_jeans.3c1c0085.jpg",
@@ -26,7 +26,7 @@
   "entrypoints": [
     "static/js/runtime-main.b7198cbd.js",
     "static/js/2.bbdc6a32.chunk.js",
-    "static/css/main.1bd4268e.chunk.css",
-    "static/js/main.c3b4707c.chunk.js"
+    "static/css/main.1d112312.chunk.css",
+    "static/js/main.e5164169.chunk.js"
   ]
 }
