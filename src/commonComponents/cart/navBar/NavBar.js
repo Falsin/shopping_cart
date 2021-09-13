@@ -54,7 +54,7 @@ export default function NavBar(props) {
         return prevItem + +currentItem.price.split(' ')[1] * currentItem.count;
       }, 0)}
       </div>
-      <button>Checkout</button>
+      <button id='checkoutBtn'>Checkout</button>
       <button id='closeBtn'>Close</button>
     </div>
   )

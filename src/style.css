@@ -26,6 +26,23 @@ body {
   text-shadow: 0 0 4px black;
   max-width: 60%;
 }
+#root > section.contact {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+#root > section.contact .mainContent {
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+}
+#root > section.contact .mainContent > * {
+  margin: 0 2vmin;
+  cursor: pointer;
+}
+#root > section.contact .mainContent > div {
+  margin-top: 2vmin;
+}
 #root > section.shopPage .mainContent {
   align-items: stretch;
   justify-content: space-between;
@@ -37,6 +54,22 @@ body {
 }
 #root > section.shopPage .mainContent > div.visible {
   margin-top: 4vmin;
+}
+#root > section.shopPage .mainContent > div.visible h3 {
+  margin-top: 2vmin;
+}
+#root > section.shopPage .mainContent > div.visible p,
+#root > section.shopPage .mainContent > div.visible button {
+  margin-top: 1.5vmin;
+}
+#root > section.shopPage .mainContent > div.visible button {
+  border: none;
+  outline: none;
+  background: black;
+  color: white;
+  font-weight: 900;
+  padding: 1vmin;
+  cursor: pointer;
 }
 #root > section.shopPage .mainContent > div .image {
   width: 100%;
@@ -86,6 +119,7 @@ body {
   height: 100%;
   width: auto;
   display: block;
+  cursor: pointer;
 }
 #root > section header ul li .countSelectedProducts {
   position: absolute;
@@ -143,6 +177,7 @@ body {
   animation-name: changePositionForNavBarAfterActive;
   animation-duration: 1s;
   animation-fill-mode: forwards;
+  overflow-y: auto;
 }
 #root #cart .navBar h2 {
   margin-top: 2vmin;
@@ -154,6 +189,8 @@ body {
 #root #cart .navBar ul .product {
   display: flex;
   width: 100%;
+  margin-top: 2.5vmin;
+  justify-content: center;
 }
 #root #cart .navBar ul .product .image {
   width: 20%;
@@ -169,6 +206,9 @@ body {
 #root #cart .navBar ul .product .detailInfo {
   width: 30%;
   word-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 #root #cart .navBar ul .product .detailInfo h3,
 #root #cart .navBar ul .product .detailInfo p {
@@ -176,10 +216,10 @@ body {
 }
 #root #cart .navBar ul .product .detailInfo div {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 #root #cart .navBar ul .product .detailInfo div button {
-  padding: 1.5vmin;
+  padding: 2vmin;
   position: relative;
   border: 0;
   background: #b1b1b1;
@@ -202,6 +242,24 @@ body {
 }
 #root #cart .navBar ul .product .detailInfo div button.increment::after {
   content: '+';
+}
+#root #cart .navBar #total {
+  margin-top: 2vmin;
+}
+#root #cart #checkoutBtn,
+#root #cart #closeBtn {
+  width: 80%;
+  margin-top: 2vmin;
+  padding: 1.2vmin;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+#root #cart #checkoutBtn {
+  background: green;
+}
+#root #cart #closeBtn {
+  background: red;
 }
 #root #cart.active #background {
   animation-name: changePositionForBackground;
@@ -248,5 +306,11 @@ body {
 @media screen and (max-width: 700px) {
   #root #cart .navBar ul .product .detailInfo {
     width: 50%;
+  }
+}
+@media screen and (min-width: 700px) {
+  #root #cart #checkoutBtn,
+  #root #cart #closeBtn {
+    width: 60%;
   }
 }

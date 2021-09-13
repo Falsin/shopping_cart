@@ -37,6 +37,27 @@ body {
       }
     }
 
+    &.contact {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+
+      .mainContent {
+        flex-direction: column;
+        justify-content: center;
+        flex-grow: 1;
+
+        & > * {
+          margin: 0 2vmin;
+          cursor: pointer;
+        }
+
+        & > div {
+          margin-top: 2vmin;
+        }
+      }
+    }
+
     &.shopPage {
 
       .mainContent {
@@ -47,7 +68,26 @@ body {
 
           &.visible {
             margin-top: 4vmin;
+
+            & h3 {
+              margin-top: 2vmin;
+            }
+
+            & p, & button {
+              margin-top: 1.5vmin;
+            }
+
+            & button {
+              border: none;
+              outline: none;
+              background: black;
+              color: white;
+              font-weight: 900;
+              padding: 1vmin;
+              cursor: pointer;
+            }
           }
+
           width: 30vmin;
           display: flex;
           flex-direction: column;
@@ -108,6 +148,7 @@ body {
             height: 100%;
             width: auto;
             display: block;
+            cursor: pointer;
           }
 
           .countSelectedProducts {
@@ -176,6 +217,8 @@ body {
       animation-name: changePositionForNavBarAfterActive;
       animation-duration: 1s;
       animation-fill-mode: forwards;
+      //overflow-y: hidden;
+      overflow-y:auto;
 
       h2 {
         margin-top: 2vmin;
@@ -188,6 +231,8 @@ body {
         .product {
           display: flex;
           width: 100%;
+          margin-top: 2.5vmin;
+          justify-content: center;
 
           .image {
             width: 20%;
@@ -205,7 +250,10 @@ body {
           .detailInfo {
             width: 30%;
             word-wrap: break-word;
-
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+ 
             & h3,
             & p {
               text-align: center !important;
@@ -213,10 +261,10 @@ body {
 
             div {
               display: flex;
-              justify-content: center;
+              justify-content: space-evenly;
 
               button {
-                padding: 1.5vmin;
+                padding: 2vmin;
                 position: relative;
                 border: 0;
                 background: rgb(177, 177, 177);
@@ -246,7 +294,30 @@ body {
           }
         }
       }
+
+      #total {
+        margin-top: 2vmin;
+      }
     }
+
+    #checkoutBtn,
+    #closeBtn {
+      width: 80%;
+      margin-top: 2vmin;
+      padding: 1.2vmin;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+
+    #checkoutBtn {
+      background: green;
+    }
+
+    #closeBtn {
+      background: red;
+    }
+
   
     &.active {
   
@@ -304,5 +375,14 @@ body {
 @media screen and (max-width: 700px) {
   #root #cart .navBar ul .product .detailInfo {
     width: 50%;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  #root #cart {
+    & #checkoutBtn,
+    & #closeBtn {
+      width: 60%;
+    }
   }
 }
