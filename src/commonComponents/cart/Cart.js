@@ -1,6 +1,6 @@
 import NavBar from "./navBar/NavBar";
 import useAddClickHandler from "../../myOwnHooks/useAddClickHandler";
-import React, { useEffect, useState } from "react/cjs/react.development";
+import { useState, useEffect } from "react";
 
 let elementsArray = [];
 
